@@ -383,6 +383,26 @@ def plot3d_plotly(x, **kwargs):
         fig.add_trace(trace)
 
     if kwargs.get('inline', True) and utils.is_jupyter():
+        fig.update_layout(scene = dict(
+            xaxis = dict(
+                title="",
+                nticks=1,
+                ticktext= [''],
+                tickvals= [0]
+            ),
+            yaxis = dict(
+                title="",
+                nticks=1,
+                ticktext= [''],
+                tickvals= [0]
+            ),
+            zaxis = dict(
+                title="",
+                nticks=1,
+                ticktext= [''],
+                tickvals= [0]
+            ),
+        ))
         fig.show()
         return
     else:
